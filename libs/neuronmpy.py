@@ -1,6 +1,7 @@
 import numpy as np
 import math
 from PIL import Image
+import random as rnd
 class neuronmpy:
 
     def __init__(self,  target_matrix, model_name, learning_rate):
@@ -112,3 +113,28 @@ class neuronmpy:
     def recognize(self):
         self.mode = "recognize"
         self.forwardpass()
+
+    def multitrain(self, inputs_matrix, targets_matrix):
+        self.loadModel()
+        print(len(targets_matrix)-1)
+        for i in range(100000):
+            x_random =  rnd.randint(0, len(targets_matrix) -1)
+            self.input_matrix = inputs_matrix[x_random]
+            self.target_matrix = targets_matrix[x_random]
+            self.startResearch(1)
+            if(self.loss < 0.001):
+                print("Reached threshold")
+                break
+
+    def transformImage(self, path_to_image):
+        img_data = Image.open(path_to_image).convert("L")
+        img_data = np.array(img_data ) 
+
+        if img_data.size > 0:
+            print("Data loaded succesfully")
+            print(img_data.size)
+            input_image = (img_data / 255.0).reshape(1, -1)
+            print(input_image.shape)
+            return input_image
+        else:
+            print("Invaild path to image")
