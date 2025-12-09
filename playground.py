@@ -6,9 +6,9 @@ input_matrix = np.array([[0.25,0.75]])
 
 input_target = np.array([[1.0, 0]])
 
-newmodel = neuronmpy(input_matrix, input_target, "model001")
+newmodel = neuronmpy(input_matrix, input_target, "model001", 0.10)
 
 newmodel.debugMode()
 newmodel.createLayers(1)
 
-newmodel.forwardpass()
+newmodel.startResearch(100)
