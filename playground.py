@@ -22,9 +22,9 @@ targets_matrix = np.array([input_targetA,input_targetB,input_targetC,input_targe
 newmodel = neuronmpy(input_targetA, "model001", 0.00005)
 
 imageA = newmodel.transformImage("imgs/128x128A.jpeg")
-imageB = newmodel.transformImage("imgs/128x128B.jpeg")
+imageB = newmodel.transformImage("imgs/128x128DB.jpeg")
 imageC = newmodel.transformImage("imgs/128x128C.jpeg")
-imageD = newmodel.transformImage("imgs/128x128D.jpeg")
+imageD = newmodel.transformImage("imgs/128x128DF.jpeg")
 imageE = newmodel.transformImage("imgs/128x128E.jpeg")
 imageF = newmodel.transformImage("imgs/128x128F.jpeg")
 imageG = newmodel.transformImage("imgs/128x128G.jpeg")
@@ -54,7 +54,8 @@ inputs_matrix = np.array([imageA,imageB,imageC,imageD,imageE,imageF,imageG,image
 # newmodel.loadModel()
 # newmodel.recognize()
 
-# newmodel.multitrain(inputs_matrix,targets_matrix)
 newmodel.loadModel()
-newmodel.loadimage("imgs/128x128DB.jpeg")
+# newmodel.multitrain(inputs_matrix,targets_matrix)
+newmodel.loadimage("imgs/128x128DF.jpeg")
+
 newmodel.recognize()

@@ -117,7 +117,7 @@ class neuronmpy:
     def multitrain(self, inputs_matrix, targets_matrix):
         self.loadModel()
         print(len(targets_matrix)-1)
-        for i in range(100000):
+        for i in range(10000):
             x_random =  rnd.randint(0, len(targets_matrix) -1)
             self.input_matrix = inputs_matrix[x_random]
             self.target_matrix = targets_matrix[x_random]
