@@ -56,5 +56,5 @@ inputs_matrix = np.array([imageA,imageB,imageC,imageD,imageE,imageF,imageG,image
 
 # newmodel.multitrain(inputs_matrix,targets_matrix)
 newmodel.loadModel()
-newmodel.loadimage("imgs/128x128F.jpeg")
+newmodel.loadimage("imgs/128x128DB.jpeg")
 newmodel.recognize()
